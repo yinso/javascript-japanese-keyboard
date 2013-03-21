@@ -1,0 +1,384 @@
+﻿<html><head>
+<title>Javascript Japanese keyboard</title>
+<script type="text/javascript" src="jjk.js"></script>
+<link rel='stylesheet' type='text/css' href='jjk.css'>
+</head>
+
+<body onLoad="init()">
+<div id="menu" class="skin0" display:none></div>
+ 
+<form name='frm'id='frm'>
+<textarea class='ta' id='ta' rows='10' cols='20'>
+</textarea>
+<input type='text' class='source' id='source' disabled='true'>
+<div id='fkey' class='fkey'>
+<input type='button' value='切替' class='y0' onClick='changeKeyboard()'>
+<input type='button' value='確定' class='y1' onClick='addToTa()'>
+<input type='button' value='BS' class='y3' onClick='bs()'>
+<input type='button' value='変換' class='y4' onClick='convert()'>
+</div>
+ 
+<div id='key1' class='key1'>
+<input type='button' value='あ' class='x12 y0' onClick='addToTb(value)'>
+<input type='button' value='い' class='x12 y1' onClick='addToTb(value)'>
+<input type='button' value='う' class='x12 y2' onClick='addToTb(value)'>
+<input type='button' value='え' class='x12 y3' onClick='addToTb(value)'>
+<input type='button' value='お' class='x12 y4' onClick='addToTb(value)'>
+<input type='button' value='か' class='x11 y0' onClick='addToTb(value)'>
+<input type='button' value='き' class='x11 y1' onClick='addToTb(value)'>
+<input type='button' value='く' class='x11 y2' onClick='addToTb(value)'>
+<input type='button' value='け' class='x11 y3' onClick='addToTb(value)'>
+<input type='button' value='こ' class='x11 y4' onClick='addToTb(value)'>
+<input type='button' value='さ' class='x10 y0' onClick='addToTb(value)'>
+<input type='button' value='し' class='x10 y1' onClick='addToTb(value)'>
+<input type='button' value='す' class='x10 y2' onClick='addToTb(value)'>
+<input type='button' value='せ' class='x10 y3' onClick='addToTb(value)'>
+<input type='button' value='そ' class='x10 y4' onClick='addToTb(value)'>
+<input type='button' value='た' class='x9 y0' onClick='addToTb(value)'>
+<input type='button' value='ち' class='x9 y1' onClick='addToTb(value)'>
+<input type='button' value='つ' class='x9 y2' onClick='addToTb(value)'>
+<input type='button' value='て' class='x9 y3' onClick='addToTb(value)'>
+<input type='button' value='と' class='x9 y4' onClick='addToTb(value)'>
+<input type='button' value='な' class='x8 y0' onClick='addToTb(value)'>
+<input type='button' value='に' class='x8 y1' onClick='addToTb(value)'>
+<input type='button' value='ぬ' class='x8 y2' onClick='addToTb(value)'>
+<input type='button' value='ね' class='x8 y3' onClick='addToTb(value)'>
+<input type='button' value='の' class='x8 y4' onClick='addToTb(value)'>
+<input type='button' value='は' class='x7 y0' onClick='addToTb(value)'>
+<input type='button' value='ひ' class='x7 y1' onClick='addToTb(value)'>
+<input type='button' value='ふ' class='x7 y2' onClick='addToTb(value)'>
+<input type='button' value='へ' class='x7 y3' onClick='addToTb(value)'>
+<input type='button' value='ほ' class='x7 y4' onClick='addToTb(value)'>
+<input type='button' value='ま' class='x6 y0' onClick='addToTb(value)'>
+<input type='button' value='み' class='x6 y1' onClick='addToTb(value)'>
+<input type='button' value='む' class='x6 y2' onClick='addToTb(value)'>
+<input type='button' value='め' class='x6 y3' onClick='addToTb(value)'>
+<input type='button' value='も' class='x6 y4' onClick='addToTb(value)'>
+<input type='button' value='や' class='x5 y0' onClick='addToTb(value)'>
+<input type='button' value='ゆ' class='x5 y1' onClick='addToTb(value)'>
+<input type='button' value='よ' class='x5 y2' onClick='addToTb(value)'>
+<input type='button' value='!' class='x5 y3' onClick='addToTb(value)'>
+<input type='button' value='?' class='x5 y4' onClick='addToTb(value)'>
+<input type='button' value='ら' class='x4 y0' onClick='addToTb(value)'>
+<input type='button' value='り' class='x4 y1' onClick='addToTb(value)'>
+<input type='button' value='る' class='x4 y2' onClick='addToTb(value)'>
+<input type='button' value='れ' class='x4 y3' onClick='addToTb(value)'>
+<input type='button' value='ろ' class='x4 y4' onClick='addToTb(value)'>
+<input type='button' value='わ' class='x3 y0' onClick='addToTb(value)'>
+<input type='button' value='を' class='x3 y1' onClick='addToTb(value)'>
+<input type='button' value='ん' class='x3 y2' onClick='addToTb(value)'>
+<input type='button' value='ー' class='x3 y3' onClick='addToTb(value)'>
+<input type='button' value='全' class='x3 y4' onClick='addToTb("　")'>
+
+<input type='button' value='ゃ' class='x2 y0' onClick='addToTb(value)'>
+<input type='button' value='ゅ' class='x2 y1' onClick='addToTb(value)'>
+<input type='button' value='ょ' class='x2 y2' onClick='addToTb(value)'>
+<input type='button' value='っ' class='x2 y3' onClick='addToTb(value)'>
+<input type='button' value='半' class='x2 y4' onClick='addToTb(" ")'>
+
+<input type='button' value='、' class='x1 y0' onClick='addToTb(value)'>
+<input type='button' value='。' class='x1 y1' onClick='addToTb(value)'>
+<input type='button' value='「' class='x1 y2' onClick='addToTb(value)'>
+<input type='button' value='」' class='x1 y3' onClick='addToTb(value)'>
+<input type='button' value='" ' class='x1 y4' onClick='addToTb(value)'>
+
+<input type='button' value='が' class='x12 y5' onClick='addToTb(value)'>
+<input type='button' value='ぎ' class='x12 y6' onClick='addToTb(value)'>
+<input type='button' value='ぐ' class='x12 y7' onClick='addToTb(value)'>
+<input type='button' value='げ' class='x12 y8' onClick='addToTb(value)'>
+<input type='button' value='ご' class='x12 y9' onClick='addToTb(value)'>
+
+<input type='button' value='ざ' class='x11 y5' onClick='addToTb(value)'>
+<input type='button' value='じ' class='x11 y6' onClick='addToTb(value)'>
+<input type='button' value='ず' class='x11 y7' onClick='addToTb(value)'>
+<input type='button' value='ぜ' class='x11 y8' onClick='addToTb(value)'>
+<input type='button' value='ぞ' class='x11 y9' onClick='addToTb(value)'>
+
+<input type='button' value='だ' class='x10 y5' onClick='addToTb(value)'>
+<input type='button' value='ぢ' class='x10 y6' onClick='addToTb(value)'>
+<input type='button' value='づ' class='x10 y7' onClick='addToTb(value)'>
+<input type='button' value='で' class='x10 y8' onClick='addToTb(value)'>
+<input type='button' value='ど' class='x10 y9' onClick='addToTb(value)'>
+
+<input type='button' value='ば' class='x9 y5' onClick='addToTb(value)'>
+<input type='button' value='び' class='x9 y6' onClick='addToTb(value)'>
+<input type='button' value='ぶ' class='x9 y7' onClick='addToTb(value)'>
+<input type='button' value='べ' class='x9 y8' onClick='addToTb(value)'>
+<input type='button' value='ぼ' class='x9 y9' onClick='addToTb(value)'>
+
+<input type='button' value='ぱ' class='x8 y5' onClick='addToTb(value)'>
+<input type='button' value='ぴ' class='x8 y6' onClick='addToTb(value)'>
+<input type='button' value='ぷ' class='x8 y7' onClick='addToTb(value)'>
+<input type='button' value='ぺ' class='x8 y8' onClick='addToTb(value)'>
+<input type='button' value='ぽ' class='x8 y9' onClick='addToTb(value)'>
+
+</div>
+
+<div id='nkey' class='nkey'>
+<input type='button' value='5' class='x6 y5' onClick='addToTb(value)'>
+<input type='button' value='4' class='x5 y5' onClick='addToTb(value)'>
+<input type='button' value='3' class='x4 y5' onClick='addToTb(value)'>
+<input type='button' value='2' class='x3 y5' onClick='addToTb(value)'>
+<input type='button' value='1' class='x2 y5' onClick='addToTb(value)'>
+<input type='button' value='0' class='x1 y5' onClick='addToTb(value)'>
+
+<input type='button' value='-' class='x6 y6' onClick='addToTb(value)'>
+<input type='button' value='+' class='x5 y6' onClick='addToTb(value)'>
+<input type='button' value='9' class='x4 y6' onClick='addToTb(value)'>
+<input type='button' value='8' class='x3 y6' onClick='addToTb(value)'>
+<input type='button' value='7' class='x2 y6' onClick='addToTb(value)'>
+<input type='button' value='6' class='x1 y6' onClick='addToTb(value)'>
+
+<input type='button' value='/' class='x6 y7' onClick='addToTb(value)'>
+<input type='button' value='*' class='x5 y7' onClick='addToTb(value)'>
+<input type='button' value='=' class='x4 y7' onClick='addToTb(value)'>
+<input type='button' value=')' class='x3 y7' onClick='addToTb(value)'>
+<input type='button' value='(' class='x2 y7' onClick='addToTb(value)'>
+<input type='button' value='\' class='x1 y7' onClick='addToTb(value)'>
+</div>
+
+
+<div id='key2' class='key2' style="display:none">
+<input type='button' value='ア' class='x12 y0' onClick='addToTb(value)'>
+<input type='button' value='イ' class='x12 y1' onClick='addToTb(value)'>
+<input type='button' value='ウ' class='x12 y2' onClick='addToTb(value)'>
+<input type='button' value='エ' class='x12 y3' onClick='addToTb(value)'>
+<input type='button' value='オ' class='x12 y4' onClick='addToTb(value)'>
+<input type='button' value='カ' class='x11 y0' onClick='addToTb(value)'>
+<input type='button' value='キ' class='x11 y1' onClick='addToTb(value)'>
+<input type='button' value='ク' class='x11 y2' onClick='addToTb(value)'>
+<input type='button' value='ケ' class='x11 y3' onClick='addToTb(value)'>
+<input type='button' value='コ' class='x11 y4' onClick='addToTb(value)'>
+<input type='button' value='サ' class='x10 y0' onClick='addToTb(value)'>
+<input type='button' value='シ' class='x10 y1' onClick='addToTb(value)'>
+<input type='button' value='ス' class='x10 y2' onClick='addToTb(value)'>
+<input type='button' value='セ' class='x10 y3' onClick='addToTb(value)'>
+<input type='button' value='ソ' class='x10 y4' onClick='addToTb(value)'>
+<input type='button' value='タ' class='x9 y0' onClick='addToTb(value)'>
+<input type='button' value='チ' class='x9 y1' onClick='addToTb(value)'>
+<input type='button' value='ツ' class='x9 y2' onClick='addToTb(value)'>
+<input type='button' value='テ' class='x9 y3' onClick='addToTb(value)'>
+<input type='button' value='ト' class='x9 y4' onClick='addToTb(value)'>
+<input type='button' value='ナ' class='x8 y0' onClick='addToTb(value)'>
+<input type='button' value='ニ' class='x8 y1' onClick='addToTb(value)'>
+<input type='button' value='ヌ' class='x8 y2' onClick='addToTb(value)'>
+<input type='button' value='ネ' class='x8 y3' onClick='addToTb(value)'>
+<input type='button' value='ノ' class='x8 y4' onClick='addToTb(value)'>
+<input type='button' value='ハ' class='x7 y0' onClick='addToTb(value)'>
+<input type='button' value='ヒ' class='x7 y1' onClick='addToTb(value)'>
+<input type='button' value='フ' class='x7 y2' onClick='addToTb(value)'>
+<input type='button' value='ヘ' class='x7 y3' onClick='addToTb(value)'>
+<input type='button' value='ホ' class='x7 y4' onClick='addToTb(value)'>
+<input type='button' value='マ' class='x6 y0' onClick='addToTb(value)'>
+<input type='button' value='ミ' class='x6 y1' onClick='addToTb(value)'>
+<input type='button' value='ム' class='x6 y2' onClick='addToTb(value)'>
+<input type='button' value='メ' class='x6 y3' onClick='addToTb(value)'>
+<input type='button' value='モ' class='x6 y4' onClick='addToTb(value)'>
+<input type='button' value='ヤ' class='x5 y0' onClick='addToTb(value)'>
+<input type='button' value='ユ' class='x5 y1' onClick='addToTb(value)'>
+<input type='button' value='ヨ' class='x5 y2' onClick='addToTb(value)'>
+<input type='button' value='!' class='x5 y3' onClick='addToTb(value)'>
+<input type='button' value='?' class='x5 y4' onClick='addToTb(value)'>
+<input type='button' value='ラ' class='x4 y0' onClick='addToTb(value)'>
+<input type='button' value='リ' class='x4 y1' onClick='addToTb(value)'>
+<input type='button' value='ル' class='x4 y2' onClick='addToTb(value)'>
+<input type='button' value='レ' class='x4 y3' onClick='addToTb(value)'>
+<input type='button' value='ロ' class='x4 y4' onClick='addToTb(value)'>
+<input type='button' value='ワ' class='x3 y0' onClick='addToTb(value)'>
+<input type='button' value='ヲ' class='x3 y1' onClick='addToTb(value)'>
+<input type='button' value='ン' class='x3 y2' onClick='addToTb(value)'>
+<input type='button' value='ー' class='x3 y3' onClick='addToTb(value)'>
+<input type='button' value='全' class='x3 y4' onClick='addToTb("　")'>
+
+<input type='button' value='ャ' class='x2 y0' onClick='addToTb(value)'>
+<input type='button' value='ュ' class='x2 y1' onClick='addToTb(value)'>
+<input type='button' value='ョ' class='x2 y2' onClick='addToTb(value)'>
+<input type='button' value='ッ' class='x2 y3' onClick='addToTb(value)'>
+<input type='button' value='半' class='x2 y4' onClick='addToTb(" ")'>
+
+<input type='button' value='、' class='x1 y0' onClick='addToTb(value)'>
+<input type='button' value='。' class='x1 y1' onClick='addToTb(value)'>
+<input type='button' value='「' class='x1 y2' onClick='addToTb(value)'>
+<input type='button' value='」' class='x1 y3' onClick='addToTb(value)'>
+<input type='button' value='"' class='x1 y4' onClick='addToTb(value)'>
+
+<input type='button' value='ガ' class='x12 y5' onClick='addToTb(value)'>
+<input type='button' value='ギ' class='x12 y6' onClick='addToTb(value)'>
+<input type='button' value='グ' class='x12 y7' onClick='addToTb(value)'>
+<input type='button' value='ゲ' class='x12 y8' onClick='addToTb(value)'>
+<input type='button' value='ゴ' class='x12 y9' onClick='addToTb(value)'>
+
+<input type='button' value='ザ' class='x11 y5' onClick='addToTb(value)'>
+<input type='button' value='ジ' class='x11 y6' onClick='addToTb(value)'>
+<input type='button' value='ズ' class='x11 y7' onClick='addToTb(value)'>
+<input type='button' value='ゼ' class='x11 y8' onClick='addToTb(value)'>
+<input type='button' value='ゾ' class='x11 y9' onClick='addToTb(value)'>
+
+<input type='button' value='ダ' class='x10 y5' onClick='addToTb(value)'>
+<input type='button' value='ヂ' class='x10 y6' onClick='addToTb(value)'>
+<input type='button' value='ヅ' class='x10 y7' onClick='addToTb(value)'>
+<input type='button' value='デ' class='x10 y8' onClick='addToTb(value)'>
+<input type='button' value='ド' class='x10 y9' onClick='addToTb(value)'>
+
+<input type='button' value='バ' class='x9 y5' onClick='addToTb(value)'>
+<input type='button' value='ビ' class='x9 y6' onClick='addToTb(value)'>
+<input type='button' value='ブ' class='x9 y7' onClick='addToTb(value)'>
+<input type='button' value='ベ' class='x9 y8' onClick='addToTb(value)'>
+<input type='button' value='ボ' class='x9 y9' onClick='addToTb(value)'>
+
+<input type='button' value='パ' class='x8 y5' onClick='addToTb(value)'>
+<input type='button' value='ピ' class='x8 y6' onClick='addToTb(value)'>
+<input type='button' value='プ' class='x8 y7' onClick='addToTb(value)'>
+<input type='button' value='ペ' class='x8 y8' onClick='addToTb(value)'>
+<input type='button' value='ポ' class='x8 y9' onClick='addToTb(value)'>
+</div>
+
+<div id='key3' class='key3' style="display:none">
+<input type='button' value='a' class='x0 y0' onClick='addToTb(value)'>
+<input type='button' value='b' class='x1 y0' onClick='addToTb(value)'>
+<input type='button' value='c' class='x2 y0' onClick='addToTb(value)'>
+<input type='button' value='d' class='x3 y0' onClick='addToTb(value)'>
+<input type='button' value='e' class='x4 y0' onClick='addToTb(value)'>
+<input type='button' value='f' class='x5 y0' onClick='addToTb(value)'>
+<input type='button' value='g' class='x6 y0' onClick='addToTb(value)'>
+<input type='button' value='h' class='x7 y0' onClick='addToTb(value)'>
+<input type='button' value='i' class='x8 y0' onClick='addToTb(value)'>
+<input type='button' value='j' class='x9 y0' onClick='addToTb(value)'>
+<input type='button' value='k' class='x10 y0' onClick='addToTb(value)'>
+<input type='button' value='l' class='x11 y0' onClick='addToTb(value)'>
+<input type='button' value='m' class='x12 y0' onClick='addToTb(value)'>
+<input type='button' value='n' class='x0 y1' onClick='addToTb(value)'>
+<input type='button' value='o' class='x1 y1' onClick='addToTb(value)'>
+<input type='button' value='p' class='x2 y1' onClick='addToTb(value)'>
+<input type='button' value='q' class='x3 y1' onClick='addToTb(value)'>
+<input type='button' value='r' class='x4 y1' onClick='addToTb(value)'>
+<input type='button' value='s' class='x5 y1' onClick='addToTb(value)'>
+<input type='button' value='t' class='x6 y1' onClick='addToTb(value)'>
+<input type='button' value='u' class='x7 y1' onClick='addToTb(value)'>
+<input type='button' value='v' class='x8 y1' onClick='addToTb(value)'>
+<input type='button' value='w' class='x9 y1' onClick='addToTb(value)'>
+<input type='button' value='x' class='x10 y1' onClick='addToTb(value)'>
+<input type='button' value='y' class='x11 y1' onClick='addToTb(value)'>
+<input type='button' value='z' class='x12 y1' onClick='addToTb(value)'>
+<input type='button' value='A' class='x0 y2' onClick='addToTb(value)'>
+<input type='button' value='B' class='x1 y2' onClick='addToTb(value)'>
+<input type='button' value='C' class='x2 y2' onClick='addToTb(value)'>
+<input type='button' value='D' class='x3 y2' onClick='addToTb(value)'>
+<input type='button' value='E' class='x4 y2' onClick='addToTb(value)'>
+<input type='button' value='F' class='x5 y2' onClick='addToTb(value)'>
+<input type='button' value='G' class='x6 y2' onClick='addToTb(value)'>
+<input type='button' value='H' class='x7 y2' onClick='addToTb(value)'>
+<input type='button' value='I' class='x8 y2' onClick='addToTb(value)'>
+<input type='button' value='J' class='x9 y2' onClick='addToTb(value)'>
+<input type='button' value='K' class='x10 y2' onClick='addToTb(value)'>
+<input type='button' value='L' class='x11 y2' onClick='addToTb(value)'>
+<input type='button' value='M' class='x12 y2' onClick='addToTb(value)'>
+<input type='button' value='N' class='x0 y3' onClick='addToTb(value)'>
+<input type='button' value='O' class='x1 y3' onClick='addToTb(value)'>
+<input type='button' value='P' class='x2 y3' onClick='addToTb(value)'>
+<input type='button' value='Q' class='x3 y3' onClick='addToTb(value)'>
+<input type='button' value='R' class='x4 y3' onClick='addToTb(value)'>
+<input type='button' value='S' class='x5 y3' onClick='addToTb(value)'>
+<input type='button' value='T' class='x6 y3' onClick='addToTb(value)'>
+<input type='button' value='U' class='x7 y3' onClick='addToTb(value)'>
+<input type='button' value='V' class='x8 y3' onClick='addToTb(value)'>
+<input type='button' value='W' class='x9 y3' onClick='addToTb(value)'>
+<input type='button' value='X' class='x10 y3' onClick='addToTb(value)'>
+<input type='button' value='Y' class='x11 y3' onClick='addToTb(value)'>
+<input type='button' value='Z' class='x12 y3' onClick='addToTb(value)'>
+
+<input type='button' value='!' class='x0 y4' onClick='addToTb(value)'>
+<input type='button' value='"' class='x1 y4' onClick='addToTb(value)'>
+<input type='button' value='#' class='x2 y4' onClick='addToTb(value)'>
+<input type='button' value='$' class='x3 y4' onClick='addToTb(value)'>
+<input type='button' value='%' class='x4 y4' onClick='addToTb(value)'>
+<input type='button' value='&' class='x5 y4' onClick='addToTb(value)'>
+<input type='button' value="'" class='x6 y4' onClick='addToTb(value)'>
+<input type='button' value='~' class='x7 y4' onClick='addToTb(value)'>
+<input type='button' value='=' class='x8 y4' onClick='addToTb(value)'>
+<input type='button' value='+' class='x9 y4' onClick='addToTb(value)'>
+<input type='button' value='-' class='x10 y4' onClick='addToTb(value)'>
+<input type='button' value='*' class='x11 y4' onClick='addToTb(value)'>
+<input type='button' value='/' class='x12 y4' onClick='addToTb(value)'>
+
+<input type='button' value='0' class='x0 y5' onClick='addToTb(value)'>
+<input type='button' value='1' class='x1 y5' onClick='addToTb(value)'>
+<input type='button' value='2' class='x2 y5' onClick='addToTb(value)'>
+<input type='button' value='3' class='x3 y5' onClick='addToTb(value)'>
+<input type='button' value='4' class='x4 y5' onClick='addToTb(value)'>
+<input type='button' value='5' class='x5 y5' onClick='addToTb(value)'>
+<input type='button' value='6' class='x6 y5' onClick='addToTb(value)'>
+<input type='button' value='7' class='x7 y5' onClick='addToTb(value)'>
+<input type='button' value='8' class='x8 y5' onClick='addToTb(value)'>
+<input type='button' value='9' class='x9 y5' onClick='addToTb(value)'>
+<input type='button' value='@' class='x10 y5' onClick='addToTb(value)'>
+<input type='button' value='&lt;' class='x11 y5' onClick='addToTb(value)'>
+<input type='button' value='&gt;' class='x12 y5' onClick='addToTb(value)'>
+
+<input type='button' value='「' class='x0 y6' onClick='addToTb(value)'>
+<input type='button' value='」' class='x1 y6' onClick='addToTb(value)'>
+<input type='button' value='『' class='x2 y6' onClick='addToTb(value)'>
+<input type='button' value='』' class='x3 y6' onClick='addToTb(value)'>
+<input type='button' value='{' class='x4 y6' onClick='addToTb(value)'>
+<input type='button' value='}' class='x5 y6' onClick='addToTb(value)'>
+<input type='button' value='[' class='x6 y6' onClick='addToTb(value)'>
+<input type='button' value=']' class='x7 y6' onClick='addToTb(value)'>
+<input type='button' value='(' class='x8 y6' onClick='addToTb(value)'>
+<input type='button' value=')' class='x9 y6' onClick='addToTb(value)'>
+<input type='button' value='【' class='x10 y6' onClick='addToTb(value)'>
+<input type='button' value='】' class='x11 y6' onClick='addToTb(value)'>
+<input type='button' value='^' class='x12 y6' onClick='addToTb(value)'>
+
+<input type='button' value=';' class='x0 y7' onClick='addToTb(value)'>
+<input type='button' value=':' class='x1 y7' onClick='addToTb(value)'>
+<input type='button' value='_' class='x2 y7' onClick='addToTb(value)'>
+<input type='button' value='\' class='x3 y7' onClick='addToTb(value)'>
+<input type='button' value='sp' class='x4 y7' onClick='addToTb(" ")'>
+<input type='button' value='' class='x5 y7' onClick='addToTb(value)'>
+<input type='button' value='' class='x6 y7' onClick='addToTb(value)'>
+<input type='button' value='' class='x7 y7' onClick='addToTb(value)'>
+<input type='button' value='' class='x8 y7' onClick='addToTb(value)'>
+<input type='button' value='' class='x9 y7' onClick='addToTb(value)'>
+<input type='button' value='' class='x10 y7' onClick='addToTb(value)'>
+<input type='button' value='' class='x11 y7' onClick='addToTb(value)'>
+<input type='button' value='' class='x12 y7' onClick='addToTb(value)'>
+
+<input type='button' value='' class='x0 y8' onClick='addToTb(value)'>
+<input type='button' value='' class='x1 y8' onClick='addToTb(value)'>
+<input type='button' value='' class='x2 y8' onClick='addToTb(value)'>
+<input type='button' value='' class='x3 y8' onClick='addToTb(value)'>
+<input type='button' value='' class='x4 y8' onClick='addToTb(value)'>
+<input type='button' value='' class='x5 y8' onClick='addToTb(value)'>
+<input type='button' value='' class='x6 y8' onClick='addToTb(value)'>
+<input type='button' value='' class='x7 y8' onClick='addToTb(value)'>
+<input type='button' value='' class='x8 y8' onClick='addToTb(value)'>
+<input type='button' value='' class='x9 y8' onClick='addToTb(value)'>
+<input type='button' value='' class='x10 y8' onClick='addToTb(value)'>
+<input type='button' value='' class='x11 y8' onClick='addToTb(value)'>
+<input type='button' value='' class='x12 y8' onClick='addToTb(value)'>
+
+<input type='button' value='' class='x0 y9' onClick='addToTb(value)'>
+<input type='button' value='' class='x1 y9' onClick='addToTb(value)'>
+<input type='button' value='' class='x2 y9' onClick='addToTb(value)'>
+<input type='button' value='' class='x3 y9' onClick='addToTb(value)'>
+<input type='button' value='' class='x4 y9' onClick='addToTb(value)'>
+<input type='button' value='' class='x5 y9' onClick='addToTb(value)'>
+<input type='button' value='' class='x6 y9' onClick='addToTb(value)'>
+<input type='button' value='' class='x7 y9' onClick='addToTb(value)'>
+<input type='button' value='' class='x8 y9' onClick='addToTb(value)'>
+<input type='button' value='' class='x9 y9' onClick='addToTb(value)'>
+<input type='button' value='' class='x10 y9' onClick='addToTb(value)'>
+<input type='button' value='' class='x11 y9' onClick='addToTb(value)'>
+<input type='button' value='' class='x12 y9' onClick='addToTb(value)'>
+
+</div>
+
+
+</form>
+<div id="result"></div>
+<script type="text/javascript">
+var menuobj=$("menu");
+
+</script>
+</body>
+</html>

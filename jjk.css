@@ -1,0 +1,161 @@
+﻿@CHARSET "UTF-8";
+BODY { background-color: #ffff99 }
+
+form {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    background-color: #CCCCCC;
+}
+
+.ta{
+	position:absolute;
+	width:400px;
+	height:100px;
+}
+
+.source{
+position:absolute;
+	margin-top:100px;
+width:400px;
+}
+
+.fkey{
+	position:absolute;
+	left: 350px;
+}
+
+.fkey input{
+	width:50px;
+}
+
+.nkey{
+	position: absolute; /*  */ 
+	margin-top:120px;
+}
+
+.key1,.key2,.key3,.fkey{
+	position:absolute;
+	margin-top:120px;
+}
+
+.y0,.y1,.y2,.y3,.y4,.y5,.y6,.y7,.y8,.y9{
+width:26px;
+}
+
+.x12{
+	position:absolute;
+	left: 312px;
+}
+
+.x11{
+	position:absolute;
+	left: 286px;
+}
+
+.x10{
+	position: absolute;  
+	left: 260px;}
+.x9{
+	position: absolute;  
+	left: 234px;}
+
+.x8{
+	position: absolute;  
+	left: 208px;}
+
+.x7{
+	position: absolute;  
+	left: 182px;}
+.x6{
+	position: absolute;  
+	left: 156px;}
+.x5{
+	position: absolute;  
+	left: 130px;}
+.x4{
+	position: absolute;  
+	left: 104px;}
+
+.x3{
+	position: absolute;  
+	left: 78px;}
+.x2{
+	position: absolute;  
+	left: 52px;}
+.x1{
+	position: absolute;  
+	left: 26px;}
+
+.x0{
+	position: relative;  
+	left: 0px;
+}
+
+.y0{
+	position: absolute; /*  */ 
+	margin-top:10px;
+}
+
+.y1{
+	position: absolute; /*  */ 
+	margin-top:30px;
+}
+
+.y2{
+	position: absolute; /*  */ 
+	margin-top:50px;
+}
+
+.y3{
+	position: absolute; /*  */ 
+	margin-top:70px;
+}
+
+.y4{
+	position: absolute; /*  */ 
+	margin-top:90px;
+}
+
+.y5{
+	position: absolute; /*  */ 
+	margin-top:115px;
+}
+
+.y6{
+	position: absolute; /*  */ 
+	margin-top:135px;
+}
+
+.y7{
+	position: absolute; /*  */ 
+	margin-top:155px;
+}
+
+.y8{
+	position: absolute; /*  */ 
+	margin-top:175px;
+}
+
+.y9{
+	position: absolute; /*  */ 
+	margin-top:195px;
+}
+
+.skin0{
+position:absolute;
+width:165px;
+border:2px solid black;
+background-color:menu;
+font-family:Verdana;
+line-height:20px;
+cursor:default;
+font-size:14px;
+z-index:100;
+visibility:hidden;
+}
+
+.menuitems{
+padding-left:10px;
+padding-right:10px;
+}
